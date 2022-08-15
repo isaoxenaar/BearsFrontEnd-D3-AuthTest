@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import "./css/app.css";
+import { Routes, Route, Link } from "react-router-dom";
+import Home  from "./components/Home";
+import AuthBar from "./components/AuthBar";
+import ObserverPage from "./components/ObserverPage"
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App--main">
+    <header className="App--header">
+      <nav className="App--nav"> 
+        <section className="App--auth">
+          <AuthBar />
+        </section>
+     </nav>
+    </header>
+    <section className="App--routes">
+      <Routes>
+          <Route path="/" element={<Home/>}></Route>
+          <Route path="/observer" element={<ObserverPage/>}></Route>
+      </Routes>
+    </section>
+     <footer className="App--footer"> 
+      this is a sticky footer
+     </footer>
+    </main>
   );
 }
 
 export default App;
+//when observer logs in, than the chatroom will be available. 
+//header, footer, navbar.
+//routing => to observerpage, register/login. 

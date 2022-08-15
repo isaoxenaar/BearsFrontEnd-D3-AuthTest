@@ -1,0 +1,56 @@
+.AuthBar--main {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width:100%;
+    position: relative;
+}
+.AuthBar--form {
+    margin: 1.5vw;
+    margin-right: 9vw;
+    color: grey;
+    font-size: 1.5vw;
+}
+.AuthBar--button {
+    border: 2px double rgb(255, 255, 255);
+    border-radius: 0.5em;
+    color:rgb(255, 239, 166);
+    font-weight: bold;
+    font-size: 1vw;
+    background-color: rgb(189, 181, 159);
+    width: 6vw;
+    height: 4vh;
+    margin-top: 1em;
+}
+.AuthBar--link {
+    font-size: 3vw;
+    margin: 3vw;
+    color:  rgb(189, 181, 159);
+    font-size: 1.5vw;
+}
+.AuthBar--link a {
+    text-decoration: none;
+    color: grey;
+}
+.AuthBar--logout {
+    margin: 0.7em;
+}
+.AuthBar--submit {
+    margin-top:1em;
+    position: absolute;
+    top: 50px;
+    z-index: 1;
+    background-color: rgb(243, 243, 243);
+    padding: 0.3em;
+}
+.Form--input {
+    padding: 0.5vw;
+    border: 1px solid rgb(255, 255, 138);
+    border-radius: 1em;
+    outline-color:rgb(255, 208, 0);
+    caret-color:rgb(189, 181, 159);
+    color:rgb(145, 138, 122);
+}
+::placeholder {
+    color:  rgb(189, 181, 159);
+}

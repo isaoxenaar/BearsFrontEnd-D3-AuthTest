@@ -1,0 +1,18 @@
+.App--main {
+  display:flex;
+  flex-direction: column;
+  justify-content:end;
+  height: 100vh;
+}
+.App--auth {
+  display: flex;
+  flex-direction: row;
+}
+.App--routes {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+.App--footer {
+  flex-shrink: 0;
+}
