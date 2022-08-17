@@ -1,5 +1,6 @@
 import React, { SyntheticEvent, useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, Location } from 'react-router-dom';
+import { observerType } from "../types/observerTypes";
 import "../css/authbar.css";
 import Register from "./SignUp";
 import Login from "./Login";
@@ -13,7 +14,9 @@ const AuthBar = () => {
     const [login, setLogin] = useState({display: 'none'});
     const [register, setRegister] = useState({display: 'none'})
     const [auth, setAuth ] = useState<any>(location.state)
-    console.log("in authbar" + location.state);
+    
+    const user: any = location.state
+    console.log("user in authbar" + user);
     
     const mouseEnter = (e:SyntheticEvent, action:string) => {
         action == "login" ? setLogin({display: "block"}) : setRegister({display: "block"});
@@ -30,7 +33,7 @@ const AuthBar = () => {
     return (
     <section className="AuthBar--main">     
         <AuthUser/>   
-        {!location.state? <section className="AuthBar--main">
+        {!user? <section className="AuthBar--main">
             <div className="AuthBar--form" onMouseEnter={e => { mouseEnter(e, "register");}} onMouseLeave={e => { mouseLeave(e,"register") }}>
                 <p className="AuthBar--title">register</p>
                 <section className="AuthBar--sumbit" style={register}><Register/></section>

@@ -1,8 +1,14 @@
 import React, {useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import { observerType } from "../types/observerTypes";
 
 const AuthUser = () => {
-    const [name, setName] = useState<string>("isa")
+    const [user, setUser] = useState<observerType>({id: 0, 
+        name: "bruxelles", 
+        email: "",
+        password: "", 
+        color: "", 
+        bears: [{id: 0, observerId: 0, longitude: 0, latitude: 0, date: new Date().toISOString()}]})
     
     useEffect(() => {
         (
@@ -10,23 +16,24 @@ const AuthUser = () => {
                 const request = await fetch("https://localhost:7005/api/Auth", 
                     {
                         method: 'GET',
-                        headers: {'Content-Type': 'application/json', },
                         credentials: 'include',
+                        headers: {'Content-Type': 'application/json', },
                     }
                 )
                 const response = await request.json();
-                if(response.name){
-                    setName(response.name);
+                console.log("authuser reponse" + response.name)
+                if(response){
+                    setUser(response);
                 }
             }   
             )()
     }, [])
 
-    if(!name) {
+    if(!user) {
         return <section></section>
     }
     return ( <section className="AuthBar--link">
-                <Link to="/observer" state={name}>observer</Link>
+                <Link to="/observer" state={user}>observer</Link>
             </section>
     )
 }

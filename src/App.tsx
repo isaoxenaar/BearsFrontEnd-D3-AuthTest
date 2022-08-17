@@ -7,6 +7,8 @@ import ObserverPage from "./components/ObserverPage"
 
 function App() {
 
+
+
   return (
     <main className="App--main">
     <header className="App--header">
@@ -32,4 +34,5 @@ function App() {
 export default App;
 //when observer logs in, than the chatroom will be available. 
 //header, footer, navbar.
-//routing => to observerpage, register/login. 
+
+//app -> auth, home(needs logged in user), observer.
